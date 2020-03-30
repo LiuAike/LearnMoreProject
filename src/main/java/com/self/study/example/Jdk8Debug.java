@@ -3,13 +3,10 @@ package com.self.study.example;
 import com.self.study.dto.BaseClass;
 import com.self.study.dto.SubClass;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * 存活在JDK8中的bug
@@ -48,9 +45,9 @@ public class Jdk8Debug {
 
     /**
      * List<String> list = Arrays.asList("abc");需要注意，可以知道返回的实际类型是java.util.Arrays$ArrayList，而不是ArrayList。
-     *
+     * <p>
      * 我们调用Object[] objArray = list.toArray();返回是String[]数组，所以我们不能将Object对象，放到objArray数组中。
-     *
+     * <p>
      * 原文链接：https://blog.csdn.net/qq_33589510/article/details/104767849
      */
     public static void TestTwo() {
@@ -68,7 +65,7 @@ public class Jdk8Debug {
 
     }
 
-    public static void TestThree(){
+    public static void TestThree() {
         List<String> dataList = new ArrayList<String>();
         dataList.add("one");
         dataList.add("two");
